@@ -1,2 +1,25 @@
-<%= form_for(@user) do |f| %>
+<%= form_for @article, :url => {:action => 'create'} do |f| %>
+  <div class="field">
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= check_box_tag(:is_begginer) %>
+    <%= label_tag(:is_begginer, "初心者ですか?") %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :text, "内容" %>
+    <%= f.text_field :text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :github_url, "Github URL" %>
+    <%= f.text_field :github_url %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "質問する" %>
+  </div>
 <% end %>

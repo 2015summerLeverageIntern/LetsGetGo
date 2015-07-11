@@ -4,6 +4,8 @@ class ArticleController < ApplicationController
   end
 
   def create
-	
+    @article = Article.new()
   end
+
+
 end
