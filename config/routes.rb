@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   get 'timeline/index'
   root to: "timeline#index"
   get 'timeline/show'
-  get 'article/show'
-  get 'article/create'
+  # get 'article/show'
+  # get 'article/create'
+
+  resources :article, only: [:new, :create, :show]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

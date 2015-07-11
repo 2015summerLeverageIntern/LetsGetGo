@@ -1,3 +1,8 @@
-
-<h1>Timeline#index</h1>
-<p>Find me in app/views/timeline/index.html.erb</p>
+<div class="pure-u-1">
+    <%= @article.title %>
+    <%= @article.text %>
+    <% if @article.is_beginner? %>
+      <p>初心者</p>
+    <% end %>
+    <%= @article.github_url %>
+</div>
