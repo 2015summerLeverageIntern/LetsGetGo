@@ -1,25 +1,30 @@
-<%= form_for @article, :url => {:action => 'create'} do |f| %>
-  <div class="field">
-    <%= f.label :title, "タイトル" %>
-    <%= f.text_field :title %>
-  </div>
+<div class="pure-u-1">
+  <h1>投稿する</h1>
+  <div class="pure-form">
+    <%= form_for @article, :url => {:action => 'create'} do |f| %>
+      <div class="field">
+        <%= f.label :title, "タイトル" %><br>
+        <%= f.text_field :title, class: "pure-u-4-5" %>
+      </div>
 
-  <div class="field">
-    <%= check_box_tag(:is_begginer) %>
-    <%= label_tag(:is_begginer, "初心者ですか?") %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :text, "内容" %>
-    <%= f.text_field :text %>
-  </div>
+      <div class="field">
+        <%= check_box_tag(:is_begginer) %>
+        <%= label_tag(:is_begginer, "初心者ですか?") %>
+      </div>
 
-  <div class="field">
-    <%= f.label :github_url, "Github URL" %>
-    <%= f.text_field :github_url %>
+      <div class="field">
+        <%= f.label :text, "内容" %><br>
+        <%= f.text_area :text, class: "pure-u-4-5" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :github_url, "Github URL" %><br>
+        <%= f.text_field :github_url, class: "pure-u-4-5" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "質問する", class: "pure-button-primary" %>
+      </div>
+    <% end %>
   </div>
-  
-  <div class="actions">
-    <%= f.submit "質問する" %>
-  </div>
-<% end %>
+</div>
