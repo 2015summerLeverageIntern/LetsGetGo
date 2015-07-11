@@ -3,21 +3,31 @@
 <head>
   <title>LetsGetGo</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
 <style>
-    body {
+    .pure-g {
         margin: 10px;
         padding: 0;
     }
 </style>
 
 <body>
+<div class="pure-menu pure-menu-horizontal pure-menu-scrollable" style="background-color: #191818">
+  <a href="#" class="pure-menu-link pure-menu-heading">Let's Get Go!</a>
+  <ul class="pure-menu-list">
+    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><i class="fa fa-folder"></i> 投稿一覧</a></li>
+    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><i class="fa fa-line-chart"></i> ランキング</a></li>
+    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><i class="fa fa-home"></i> マイページ</a></li>
+    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><i class="fa fa-pencil-square-o"></i> 投稿する</a></li>
+    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><i class="fa fa-sign-in"></i> ログイン</a></li>
+  </ul>
+</div>
   <div class="pure-g">
     <%= yield %>
   </div>
-
 </body>
 </html>
