@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'timeline/index'
+  root to: "timeline#index"
+  get 'timeline/show'
+  get 'article/show'
+  get 'article/create'
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
