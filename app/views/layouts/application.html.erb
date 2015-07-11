@@ -6,27 +6,18 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+<style>
+    body {
+        margin: 10px;
+        padding: 0;
+    }
+</style>
+
 <body>
-	<header>
-	<nav>
-	<!-- user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド -->
-	<% if user_signed_in? %> 
-		<!-- current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド -->
-		<!-- *_path はUserモデルを作成したときに、
-		deviseにより自動で作成されてますので、rake routesで確認できます -->
-		Logged in as <strong><%= current_user.email %></strong>.
-		<%= link_to 'プロフィール変更', edit_user_registration_path %> |
-		<%= link_to "ログアウト", destroy_user_session_path, method: :delete %> |
-		<%= link_to "投稿する", article_create_path%>
-	<% else %>
-		<%= link_to "サインイン", new_user_registration_path %> |
-		<%= link_to "ログイン", new_user_session_path %>
-	<% end %>
-	</nav>
-	</header>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= yield %>
+  <div class="pure-g">
+    <%= yield %>
+  </div>
 
 </body>
 </html>
