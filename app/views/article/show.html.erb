@@ -19,6 +19,7 @@
 <% end %>
 <div class="pure-form">
   <%= form_tag('/article/create_review') do %>
+    <input type="hidden" name="id" value=<%=@article.id%>>
     <input type="text" name="text" /><br />
     <input type="submit" value="send">
   <% end %>
@@ -26,6 +27,7 @@
 </div>
 <div class="pure-form">
   <%= form_tag('/article/approve') do %>
+    <input type="hidden" name="id" value=<%=@article.id%>>
     <input type="submit" value="GO">
   <% end %>
   </div>
