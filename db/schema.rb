@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150711173826) do
+ActiveRecord::Schema.define(version: 20150712021035) do
 
   create_table "articles", force: :cascade do |t|
     t.integer  "user_id",     limit: 4
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20150711173826) do
     t.string   "github_url",  limit: 255
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "article_id", limit: 4
+    t.string   "text",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "user_name",  limit: 255
   end
 
   create_table "users", force: :cascade do |t|

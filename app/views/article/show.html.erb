@@ -6,3 +6,21 @@
     <% end %>
     <%= @article.github_url %>
 </div>
+
+<div class="pure-u-1">
+  <p>ログ</p>
+  <% if @reviews.present? %>
+  <% @reviews.each do |r| %>
+    <tr>
+      <td><%= r.user_name %></td>
+      <td><%= r.text %></td>
+    </tr>
+  <% end %>
+<% end %>
+  <div class="pure-form">
+    <%= form_tag('/article/create_review') do %>
+      <input type="text" name="text" /><br />
+      <input type="submit" value="send">
+    <% end %>
+  </div>
+</div>

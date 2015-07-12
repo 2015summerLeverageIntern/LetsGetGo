@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'timeline/show'
   # get 'article/show'
   # get 'article/create'
+  post 'article/create_review'
 
   resources :article, only: [:new, :create, :show]
 
