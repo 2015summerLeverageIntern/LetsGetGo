@@ -17,10 +17,19 @@
     </tr>
   <% end %>
 <% end %>
-  <div class="pure-form">
-    <%= form_tag('/article/create_review') do %>
-      <input type="text" name="text" /><br />
-      <input type="submit" value="send">
-    <% end %>
+<div class="pure-form">
+  <%= form_tag('/article/create_review') do %>
+    <input type="text" name="text" /><br />
+    <input type="submit" value="send">
+  <% end %>
   </div>
 </div>
+<div class="pure-form">
+  <%= form_tag('/article/approve') do %>
+    <input type="submit" value="GO">
+  <% end %>
+  </div>
+</div>
+<p>Goは</p>
+<%= @go_number  %>
+<p>個</p>

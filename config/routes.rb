@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # get 'article/show'
   # get 'article/create'
   post 'article/create_review'
+  post 'article/approve'
 
   resources :article, only: [:new, :create, :show]
 
