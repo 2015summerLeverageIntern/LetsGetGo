@@ -1,5 +1,6 @@
 class ArticleController < ApplicationController
   def show
+    @article_id = params[:id]
     @article = Article.find(params[:id])
     @new_review = Review.new
     @reviews = Review.where(article_id: @article.id)
@@ -27,7 +28,7 @@ class ArticleController < ApplicationController
         @new_review = Review.new(text:  params[:text])
         @new_review.user = current_user;
         @new_review.user_name = current_user.email;
-        @article = Article.find_by(user_id: current_user.id)
+        @article = Article.find(params[:id])
         @new_review.article = @article
 
         if @new_review.save
@@ -40,7 +41,7 @@ class ArticleController < ApplicationController
   def approve
     @approve = Approve.new
     @approve.user = current_user
-    @approve.article = Article.find_by(user_id: current_user.id)
+    @approve.article = Article.find(params[:id])
         if @approve.save
           redirect_to @approve.article, notice: 'Goしました'
         else
