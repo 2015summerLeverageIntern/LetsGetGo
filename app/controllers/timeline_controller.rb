@@ -3,5 +3,6 @@ class TimelineController < ApplicationController
   end
 
   def show
+    @articles = Article.all
   end
 end

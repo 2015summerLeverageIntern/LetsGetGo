@@ -9,14 +9,7 @@
 
 <div class="pure-u-1">
   <p>ログ</p>
-  <% if @reviews.present? %>
-  <% @reviews.each do |r| %>
-    <tr>
-      <td><%= r.user_name %></td>
-      <td><%= r.text %></td>
-    </tr>
-  <% end %>
-<% end %>
+% end %>
 <div class="pure-form">
   <%= form_tag('/article/create_review') do %>
     <input type="hidden" name="id" value=<%=@article.id%>>
@@ -25,6 +18,62 @@
   <% end %>
   </div>
 </div>
+<div class="pure-g">
+  <div class="pure-u-2-24"></div>
+  <div class="pure-u-22-24">
+    <div class="posts">
+
+      <!-- A single blog post -->
+      <div class="post">
+        <header class="post-header">
+          <h2 class="post-title">TITLE</h2>
+
+          <p class="post-meta">
+            By <a href="#" class="post-author">USER NAME</a>
+            <span> #初心者 </span>
+          </p>
+        </header>
+
+        <div class="post-description">
+          <p>
+            ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT<br>
+            ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT<br>
+            ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT<br>
+            ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT<br>
+            ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT  ARTICLE TEXT<br>
+          </p>
+        </div>
+      </div>
+      <p><a href="">github URL </a></p>
+    </div>
+
+    <hr>
+    <h2 class="post-title">ログ</h2>
+    <div class="post">
+
+      <div class="post-description">
+        <% if @reviews.present? %>
+          <% @reviews.each do |r| %>
+            <header class="post-header">
+              <p class="pure-u-1"">
+                By <%= r.user_name %></p>
+            </header>
+            <tr>
+              <td><%= r.text %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="pure-form">
+      <form action="http://153.122.0.93/article/create_review" accept-charset="UTF-8" method="post" class="pure-form pure-form-stacked"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="2j4dg3Bd4yj16hdz9LjXTbfkDrf+7u5tdzTK/jWgxcoH4NcdqP4xmDHYJQy5wY5x7MbqfFl5MPNZvOQbojUF4w==">
+        <textarea class="pure-input" cols="3" name="text"></textarea><br>
+        <input type="submit" value="send" class="pure-button pure-button-primary">
+      </form>
+    </div>
+  </div>
+
 <div class="pure-form">
   <%= form_tag('/article/approve') do %>
     <input type="hidden" name="id" value=<%=@article.id%>>
@@ -34,4 +83,5 @@
 </div>
 <p>Goは</p>
 <%= @go_number  %>
-<p>個</p>
+<p>個</p>                                                                          
+</body><iframe src="./LetsGetGo_files/commandbox.html" id="vichrome-commandframe" seamless="" style="display: none;"></iframe></html>

@@ -1,2 +1,8 @@
-<h1>Timeline#show</h1>
-<p>Find me in app/views/timeline/show.html.erb</p>
+<div class="pure-u-1">
+<% if @articles.present? %>
+  <% @articles.each do |r| %>
+    <%= r.title %></br>
+    <%= r.text %></br>
+  <% end %>
+<% end %>
+</div>

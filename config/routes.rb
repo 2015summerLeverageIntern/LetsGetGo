@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'timeline/index'
-  root to: "timeline#index"
+  root to: "timeline#show"
   get 'timeline/show'
   # get 'article/show'
   # get 'article/create'
