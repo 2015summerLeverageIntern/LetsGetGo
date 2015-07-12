@@ -19,11 +19,29 @@
 <div class="pure-menu pure-menu-horizontal pure-menu-scrollable" style="background-color: #191818">
   <a href="#" class="pure-menu-link pure-menu-heading">Let's Get Go!</a>
   <ul class="pure-menu-list">
-    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><i class="fa fa-folder"></i> 投稿一覧</a></li>
+    <li class="pure-menu-item">
+      <%= link_to timeline_show_path, class: 'pure-menu-link' do %>
+        <i class="fa fa-folder"></i> 投稿一覧
+      <% end %>
+    </li>
     <li class="pure-menu-item"><a href="#" class="pure-menu-link"><i class="fa fa-line-chart"></i> ランキング</a></li>
     <li class="pure-menu-item"><a href="#" class="pure-menu-link"><i class="fa fa-home"></i> マイページ</a></li>
-    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><i class="fa fa-pencil-square-o"></i> 投稿する</a></li>
-    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><i class="fa fa-sign-in"></i> ログイン</a></li>
+    <li class="pure-menu-item">
+      <%= link_to new_article_path, class: 'pure-menu-link' do %>
+          <i class="fa fa-pencil-square-o"></i> 投稿する
+      <% end %>
+    </li>
+    <li class="pure-menu-item">
+      <% if user_signed_in? %>
+        <%= link_to destroy_user_session_path, class: 'pure-menu-link', method: :delete do %>
+          <i class="fa fa-sign-out"></i> ログアウト
+        <% end %>
+      <% else %>
+        <%= link_to new_user_session_path, class: 'pure-menu-link', method: :GET do %>
+          <i class="fa fa-sign-in"></i> ログイン
+        <% end %>
+      <% end %>
+    </li>
   </ul>
 </div>
   <div class="pure-g">

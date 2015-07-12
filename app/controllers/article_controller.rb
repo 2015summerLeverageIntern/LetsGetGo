@@ -2,7 +2,7 @@ class ArticleController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @new_review = Review.new
-    @reviews = Review.where(user_id: current_user.id)
+    @reviews = Review.where(article_id: @article.id)
   end
 
   def new
