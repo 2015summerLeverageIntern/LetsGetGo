@@ -1,3 +1,11 @@
+<style type="text/css">
+  .block {
+    border: #ffb6c1 solid 1px;
+    border-left: #ffb6c1 solid 10px;
+    padding: 20px;
+    background: #fff;
+  }
+</style> 
 <div class="pure-u-1">
   <% if @article.is_beginner? %>
     <p>初心者</p>
@@ -29,11 +37,11 @@
 
     <hr>
     <h2 class="post-title">ログ</h2>
-    <div class="post">
 
-      <div class="post-description">
+      <div class="post-description .block" >
         <% if @reviews.present? %>
           <% @reviews.each do |r| %>
+            <div style="border: #ffb6c1 solid 1px; margin-top: 10px;">
             <header class="post-header">
               <p class="pure-u-1"">
                 By <%= r.user_name %></p>
@@ -41,33 +49,31 @@
             <tr>
               <td><%= r.text %></td>
             </tr>
+            </div>
           <% end %>
         <% end %>
       </div>
-    </div>
 
     <div class="pure-form">
-
-
-      <p>ログ</p>
+      <p>レビューを書く</p>
       <div class="pure-form" class="pure-form pure-form-stacked">
         <%= form_tag('/article/create_review') do %>
           <input type="hidden" name="id" value=<%=@article.id%>>
           <input type="text" name="text" /><br />
-          <input type="submit" value="send" class="pure-button pure-button-primary">
+          <input type="submit" value="send" style="margin-top:20px" class="pure-button pure-button-primary">
         <% end %>
       </div>
     </div>
   </div>
 
-  <div class="pure-form">
+  <div class="pure-form" style="margin-left:25px">
     <%= form_tag('/article/approve') do %>
       <input type="hidden" name="id" value=<%=@article.id%>>
-      <input type="submit" value="GO" class="pure-button pure-button-primary">
+      <input style="margin-top:20px"  type="submit" value="GO" class="pure-button pure-button-primary">
     <% end %>
-    <p>Go は</p>
-    <%= @go_number  %>
-    <p>個</p>
+    <div class="pure-u-1">
+      <p>Go は <%= @go_number  %> 個</p>
+    </div>
   </div>
 </div>
 </body><iframe src="./LetsGetGo_files/commandbox.html" id="vichrome-commandframe" seamless="" style="display: none;"></iframe></html>
